@@ -13,11 +13,11 @@ from Tkinter import *
 root = Tk()
 # Create our drawpad and oval
 drawpad = Canvas(root, width=480,height=320, background='white')
-targetx1 = 200
-targety1 = 20
-targetx2 = 280
-targety2 = 80
-target = drawpad.create_rectangle(targetx1,targety1,targetx2,targety2, fill="blue")
+tx1 = 200
+ty1 = 20
+tx2 = 280
+ty2 = 80
+target = drawpad.create_rectangle(tx1,ty1,tx2,ty2, fill="blue")
 player = drawpad.create_rectangle(240,240,260,260, fill="pink")
 
 

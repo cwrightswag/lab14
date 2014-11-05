@@ -11,11 +11,11 @@ from Tkinter import *
 root = Tk()
 # Create our drawpad and oval
 drawpad = Canvas(root, width=480,height=320, background='white')
-targetx1 = 200
-targety1 = 20
-targetx2 = 280
-targety2 = 80
-target = drawpad.create_rectangle(targetx1,targety1,targetx2,targety2, fill="blue")
+tx1 = 200
+ty1 = 20
+tx2 = 280
+ty2 = 80
+target = drawpad.create_rectangle(tx1,ty1,tx2,ty2, fill="blue")
 player = drawpad.create_rectangle(240,240,260,260, fill="pink")
 
 
@@ -46,7 +46,11 @@ class MyApp:
 		global oval
 		global drawpad
                 x1,y1,x2,y2 = drawpad.coords(player)
-		global targetx1, targety1, targetx2, targety2
+		global tx1, ty1, tx2, ty2
+		x1, y1, x2, y2 = drawpad.coords(player)
+		drawpad.move(player, 0, -10)
+		if (tx1 < x1 and tx2 > x2) and (ty1 < y1 and ty2 > y2):
+		    drawpad.itemconfig(target, fill ="red")
 
 
 		# Ensure that we are doing our collision detection
